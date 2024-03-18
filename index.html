@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./img/favicon.jpg">
+    <script src="script.js"></script>
+    <script src="./node_modules/chart.js/dist/chart.umd.js"></script>
+    <script src="chart.js"></script>
+</head>
+<body onload="loadPokemon()">
+
+    <header>
+        <img class="logo-img" src="./img/pokedexIcon.jpg">
+        <div id="input-and-searchButton">
+            <input id="input" placeholder="Pokémon name...">
+            <button id="search-button" onclick="search()">Search Pokémon!</button>
+        </div>
+        <button id="reset-button" onclick="reset()">Reset</button>
+    </header>
+
+    <div id="allPokemon">
+
+    </div>
+
+    <div class="loadPokemon-container">
+        <button id="loadPokemon-button" onclick="loadPokemon()">Load more Pokémon</button>
+    </div>
+
+    <div id="selectedPokemon-div" class="selectedPokemon-div" onclick="closeWindow()">
+        <div id="selectedPokemon" onclick="doNotClose(event)">
+            <span id="selectedPokemonName"></span>
+            <div id="type-and-id">
+                <span id="type"></span>
+                <span id="id"></span>
+            </div>
+            <div id="pokemonInfos">
+                <img id="selectedPokemon-IMG" src="">
+                <div class="infos-header">
+                    <span onclick="aboutInfos(selectedPokemonJSON)">About</span>
+                    <span onclick="getStats(selectedPokemonJSON)">Stats</span>
+                    <span onclick="showMoves(selectedPokemonJSON)">Moves</span>
+                </div>
+                <div id="pokemonInfos-content">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
